@@ -6,9 +6,15 @@ import (
 )
 
 func indexPage() (string, g.Node) {
-	return "Welcome!", h.Article(
-		h.H1(g.Text("Welcome to this example page")),
-		h.P(g.Text("I hope it will make you happy. 😄 It's using TailwindCSS for styling.")),
+	return "HTML2GO", Container(h.Class("hero min-h-screen"),
+		h.Div(h.Class("hero-overlay bg-opacity-60")),
+		h.Div(h.Class("hero-content text-center text-neutral-content"),
+			h.Div(h.Class("max-w-md"),
+				h.H1(h.Class("mb-5 text-xl font-bold"), g.Text("Hello there")),
+				h.P(h.Class("mb-5"), g.Text("Hey there")),
+				Button("btn btn-primary btn-outline", "Let's Go!"),
+			),
+		),
 	)
 }
 
